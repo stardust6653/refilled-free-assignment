@@ -1,7 +1,12 @@
 import React from "react";
+import Header from "../src/components/Header";
 
 const cart = () => {
-  return <div>cart</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default cart;

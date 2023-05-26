@@ -3,6 +3,7 @@ $secondary-color: #808080;
 $accent-color: #e94734;
 $best: #256cee;
 $new: #e6e6e6;
+$del: #666666;
 
 :export {
   primaryColor: $primary-color;
@@ -10,4 +11,5 @@ $new: #e6e6e6;
   accentColor: $accent-color;
   best: $best;
   new: $new;
+  del: $del;
 }

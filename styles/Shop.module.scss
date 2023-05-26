@@ -1,0 +1,36 @@
+.component {
+  width: 375px;
+  .status {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .time {
+      margin-left: 33.45px;
+    }
+    .side {
+      margin-right: 17.33px;
+    }
+  }
+  header {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    nav {
+      padding: 10px;
+      border-right: 1px solid black;
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
+      width: 255px;
+    }
+    .cart {
+      padding: 20px;
+      border-left: 1px solid black;
+    }
+  }
+}

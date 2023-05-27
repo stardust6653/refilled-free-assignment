@@ -8,9 +8,6 @@ const SelectOption = () => {
   const session: any = sessionStorage.getItem("item");
   const data = JSON.parse(session);
 
-  console.log(data.productOptions);
-  console.log(data.name);
-
   return (
     <div className={styles.selectOptionComponent}>
       <h3>{data.name}</h3>

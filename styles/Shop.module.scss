@@ -1,6 +1,7 @@
 .layout {
   display: flex;
   justify-content: center;
+
   .component {
     width: 375px;
     height: 100vh;
@@ -16,6 +17,11 @@
       span {
         color: $secondary-color;
       }
+    }
+    .cardList {
+      width: 375px;
+      display: flex;
+      justify-content: center;
     }
   }
 }

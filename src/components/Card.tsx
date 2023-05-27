@@ -1,8 +1,10 @@
 import styles from "../../styles/Card.module.scss";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { DataProps } from "../../pages/shop";
+import { useDispatch } from "react-redux";
+import { on } from "../features/modal/modalSlice";
 
 const Card = ({
   imageUrl,
@@ -14,10 +16,17 @@ const Card = ({
   productOptions,
 }: DataProps) => {
   const discountRate = Math.round(((originPrice - price) / originPrice) * 100);
+  const dispatch = useDispatch();
 
   const color = tag.color;
+
   return (
-    <li className={styles.card}>
+    <li
+      className={styles.card}
+      onClick={() => {
+        dispatch(on());
+      }}
+    >
       <Image src={imageUrl} alt="" width={168} height={168} />
       {tag && (
         <span

@@ -5,7 +5,7 @@ import type { AppProps } from "next/app";
 import { store } from "../src/app/store";
 import { Provider } from "react-redux";
 import Head from "next/head";
-import StatusBar from "../src/components/Statusbar";
+import StatusBar from "../src/components/StatusBar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

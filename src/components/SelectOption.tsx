@@ -2,23 +2,27 @@ import styles from "../../styles/SelectOption.module.scss";
 import { RiArrowDownSLine } from "react-icons/ri";
 
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
 
 const SelectOption = () => {
   const [option, setOption] = useState("옵션 선택");
-  const session: any = sessionStorage.getItem("item");
-  const data = JSON.parse(session);
+
+  const optionData = useSelector(
+    (state: RootState) => state.optionData.value
+  ).payload;
 
   return (
     <div className={styles.selectOptionComponent}>
-      <h3>{data.name}</h3>
-      {data.productOptions.length > 0 ? (
+      <h3>{optionData.name}</h3>
+      {optionData.productOptions.length > 0 ? (
         <div className={styles.optionBox}>
           <button className={styles.optionResult}>
             {option}
             <RiArrowDownSLine />
           </button>
           <div className={styles.selectBox}>
-            {data.productOptions.map((item: any) => {
+            {optionData.productOptions.map((item: any) => {
               return (
                 <button
                   className={styles.option}

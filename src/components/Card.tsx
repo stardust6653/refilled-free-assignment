@@ -3,8 +3,10 @@ import styles from "../../styles/Card.module.scss";
 import Image from "next/image";
 import React, { useState } from "react";
 import { DataProps } from "../../pages/shop";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { on } from "../features/modal/modalSlice";
+import { add } from "../features/optionData/optionDataSlice";
+import { RootState } from "../app/store";
 
 const Card = ({
   imageUrl,
@@ -16,6 +18,7 @@ const Card = ({
   productOptions,
 }: DataProps) => {
   const discountRate = Math.round(((originPrice - price) / originPrice) * 100);
+
   const dispatch = useDispatch();
 
   const color = tag.color;
@@ -35,7 +38,7 @@ const Card = ({
       className={styles.card}
       onClick={() => {
         dispatch(on());
-        sessionStorage.setItem("item", JSON.stringify(itemInfo));
+        dispatch(add(itemInfo));
         document.body.style.overflow = "hidden";
       }}
     >

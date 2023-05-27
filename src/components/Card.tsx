@@ -25,6 +25,8 @@ const Card = ({
       className={styles.card}
       onClick={() => {
         dispatch(on());
+
+        document.body.style.overflow = "hidden";
       }}
     >
       <Image src={imageUrl} alt="" width={168} height={168} />

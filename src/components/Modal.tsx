@@ -12,6 +12,8 @@ const Modal = () => {
       className={styles.modal}
       onClick={() => {
         dispatch(off());
+
+        document.body.style.overflow = "scroll";
       }}
     ></div>
   );

@@ -1,9 +1,9 @@
-import styles from "../../styles/Sidebar.module.scss";
+import styles from "../../styles/StatusBar.module.scss";
 
 import Image from "next/image";
 import React from "react";
 
-const Sidebar = () => {
+const StatusBar = () => {
   return (
     <div className={styles.component}>
       <div className={styles.status}>
@@ -26,4 +26,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default StatusBar;

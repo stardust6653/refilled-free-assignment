@@ -1,9 +1,13 @@
 import styles from "../styles/Shop.module.scss";
 
 import React from "react";
-import Header from "../src/components/Header";
 import axios from "axios";
+
+import Header from "../src/components/Header";
 import CardList from "../src/components/CardList";
+import { useSelector } from "react-redux";
+import { RootState } from "../src/app/store";
+import Select from "../src/components/Select";
 
 export interface DataProps {
   id?: number;
@@ -26,7 +30,9 @@ export interface DataProps {
   color?: string;
 }
 
-const shop = ({ data }: any) => {
+const Shop = ({ data }: any) => {
+  const modal = useSelector((state: RootState) => state.modal.value);
+
   return (
     <div className={styles.layout}>
       <div className={styles.component}>
@@ -35,16 +41,11 @@ const shop = ({ data }: any) => {
           사이토카인. <br />
           <span>완벽한 탈모케어를 위한 선택</span>
         </div>
-        <div
-          style={{
-            width: "375px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+        <div className={styles.cardList}>
           <CardList list={data} />
         </div>
       </div>
+      {modal && <Select />}
     </div>
   );
 };
@@ -61,4 +62,4 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default shop;
+export default Shop;

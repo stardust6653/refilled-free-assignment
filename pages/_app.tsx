@@ -1,8 +1,11 @@
+import styles from "../styles/Layout.module.scss";
+
 import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import { store } from "../src/app/store";
 import { Provider } from "react-redux";
 import Head from "next/head";
+import StatusBar from "../src/components/Statusbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,7 +20,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <Provider store={store}>
-        <Component {...pageProps} />
+        <div className={styles.layout}>
+          <StatusBar />
+          <Component {...pageProps} />
+        </div>
       </Provider>
     </>
   );

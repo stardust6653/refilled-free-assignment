@@ -41,6 +41,7 @@
       margin-bottom: 22px;
 
       .option {
+        cursor: pointer;
         box-sizing: border-box;
 
         width: 270px;
@@ -64,6 +65,8 @@
     }
 
     .noOptions {
+      cursor: pointer;
+
       width: 270px;
       height: 45px;
       border: 1px solid #808080;
@@ -88,6 +91,7 @@
   }
 
   .cartBtn {
+    cursor: pointer;
     background-color: $primary-color;
     color: white;
     width: 270px;

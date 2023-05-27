@@ -30,10 +30,10 @@ const Card = ({
       )}
       <h3 className={styles.name}>{name}</h3>
       <p className={styles.description}>{desc}</p>
-      <del className={styles.del}>{originPrice.toLocaleString("es-Us")}</del>
+      <del className={styles.del}>{originPrice.toLocaleString("es-Us")}원</del>
       <p className={styles.priceGroup}>
         <span className={styles.accent}>{discountRate}%</span>
-        <span className={styles.price}>{price.toLocaleString("es-Us")}</span>
+        <span className={styles.price}>{price.toLocaleString("es-Us")}원</span>
       </p>
     </li>
   );

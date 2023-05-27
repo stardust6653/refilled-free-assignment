@@ -1,17 +1,5 @@
 .component {
   width: 375px;
-  .status {
-    height: 44px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .time {
-      margin-left: 33.45px;
-    }
-    .side {
-      margin-right: 17.33px;
-    }
-  }
   header {
     border-bottom: 1px solid black;
     border-top: 1px solid black;

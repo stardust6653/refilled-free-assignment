@@ -5,32 +5,43 @@ import React, { useState } from "react";
 
 const SelectOption = () => {
   const [option, setOption] = useState("옵션 선택");
-  const arr = ["A", "B", "C"];
+  const session: any = sessionStorage.getItem("item");
+  const data = JSON.parse(session);
+
+  console.log(data.productOptions);
+  console.log(data.name);
 
   return (
     <div className={styles.selectOptionComponent}>
-      <h3>헤어 리커버리 사이토카인 키트</h3>
-      <div className={styles.optionBox}>
-        <button className={styles.optionResult}>
-          {option}
-          <RiArrowDownSLine />
-        </button>
-        <div className={styles.selectBox}>
-          {arr.map((item, i) => {
-            return (
-              <button
-                className={styles.option}
-                key={i}
-                onClick={(item) => {
-                  setOption(item.currentTarget.innerText);
-                }}
-              >
-                {item}
-              </button>
-            );
-          })}
+      <h3>{data.name}</h3>
+      {data.productOptions.length > 0 ? (
+        <div className={styles.optionBox}>
+          <button className={styles.optionResult}>
+            {option}
+            <RiArrowDownSLine />
+          </button>
+          <div className={styles.selectBox}>
+            {data.productOptions.map((item: any) => {
+              return (
+                <button
+                  className={styles.option}
+                  key={item["id"]}
+                  onClick={() => {
+                    setOption(item["name"]);
+                  }}
+                >
+                  {item["name"]}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className={styles.optionBox}>
+          <button className={styles.noOptions}>옵션 없음</button>
+          <div className={styles.empty}></div>
+        </div>
+      )}
       <button className={styles.cartBtn}>장바구니 담기</button>
     </div>
   );

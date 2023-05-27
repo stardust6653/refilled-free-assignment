@@ -14,6 +14,10 @@
   h3 {
     margin-bottom: 14px;
     font-size: 18px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .optionBox {
     .optionResult {
@@ -58,11 +62,35 @@
         border-style: solid solid solid solid;
       }
     }
+
+    .noOptions {
+      width: 270px;
+      height: 45px;
+      border: 1px solid #808080;
+
+      color: #808080;
+
+      background-color: #f2f2f2;
+      font-size: 13px;
+      font-weight: 500;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+
+      margin-bottom: 2px;
+    }
+
+    .empty {
+      height: 135px;
+    }
   }
 
   .cartBtn {
     background-color: $primary-color;
     color: white;
+    width: 270px;
     height: 60px;
     padding: 20px;
     font-size: 18px;

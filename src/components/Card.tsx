@@ -20,12 +20,22 @@ const Card = ({
 
   const color = tag.color;
 
+  const itemInfo = {
+    imageUrl,
+    name,
+    originPrice,
+    price,
+    tag,
+    desc,
+    productOptions,
+  };
+
   return (
     <li
       className={styles.card}
       onClick={() => {
         dispatch(on());
-
+        sessionStorage.setItem("item", JSON.stringify(itemInfo));
         document.body.style.overflow = "hidden";
       }}
     >

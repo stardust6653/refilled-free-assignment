@@ -16,7 +16,7 @@ const CardList = ({ list }: any) => {
             originPrice={item.originPrice}
             price={item.price}
             tag={item.tag}
-            productOptions={item.productOption}
+            productOptions={item.productOptions}
             desc={item.desc}
           />
         );

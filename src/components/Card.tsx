@@ -6,9 +6,9 @@ import { DataProps } from "../../pages/shop";
 import { useDispatch, useSelector } from "react-redux";
 import { on } from "../features/modal/modalSlice";
 import { add } from "../features/optionData/optionDataSlice";
-import { RootState } from "../app/store";
 
 const Card = ({
+  id,
   imageUrl,
   name,
   originPrice,
@@ -24,6 +24,7 @@ const Card = ({
   const color = tag.color;
 
   const itemInfo = {
+    id,
     imageUrl,
     name,
     originPrice,

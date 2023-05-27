@@ -11,6 +11,7 @@ const CardList = ({ list }: any) => {
         return (
           <Card
             key={item.id}
+            id={item.id}
             imageUrl={item.imageUrl}
             name={item.name}
             originPrice={item.originPrice}

@@ -4,13 +4,49 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
+import Alert from "./alert";
 
 const SelectOption = () => {
   const [option, setOption] = useState("옵션 선택");
+  const [popUp, setPopUp] = useState(false);
 
   const optionData = useSelector(
     (state: RootState) => state.optionData.value
   ).payload;
+
+  const localData = localStorage.getItem("cart");
+
+  const optionResult = () => {
+    if (option === "옵션 없음") {
+      return "옵션 없음";
+    } else {
+      return option;
+    }
+  };
+
+  const data: any = {
+    id: optionData.id,
+    imageUrl: optionData.imageUrl,
+    name: optionData.name,
+    originPrice: optionData.originPrice,
+    price: optionData.price,
+    tag: optionData.tag,
+    productOptions: optionResult(),
+    desc: optionData.desc,
+  };
+
+  const addCart = () => {
+    if (localData === null) {
+      localStorage.setItem("cart", JSON.stringify([data]));
+    } else {
+      if (JSON.parse(localStorage.cart) !== undefined) {
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...JSON.parse(localStorage.cart), data])
+        );
+      }
+    }
+  };
 
   return (
     <div className={styles.selectOptionComponent}>
@@ -26,9 +62,9 @@ const SelectOption = () => {
               return (
                 <button
                   className={styles.option}
-                  key={item["id"]}
+                  key={item.id}
                   onClick={() => {
-                    setOption(item["name"]);
+                    setOption(item.name);
                   }}
                 >
                   {item["name"]}
@@ -39,11 +75,31 @@ const SelectOption = () => {
         </div>
       ) : (
         <div className={styles.optionBox}>
-          <button className={styles.noOptions}>옵션 없음</button>
+          <button
+            className={styles.noOptions}
+            onClick={() => {
+              setOption("옵션 없음");
+            }}
+          >
+            옵션 없음
+          </button>
           <div className={styles.empty}></div>
         </div>
       )}
-      <button className={styles.cartBtn}>장바구니 담기</button>
+      <button
+        className={styles.cartBtn}
+        onClick={() => {
+          if (option !== "옵션 선택") {
+            addCart();
+          } else {
+            setPopUp(true);
+            setTimeout(() => setPopUp(false), 2000);
+          }
+        }}
+      >
+        장바구니 담기
+      </button>
+      {popUp && <Alert />}
     </div>
   );
 };

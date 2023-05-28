@@ -1,10 +1,11 @@
+import styles from "../../styles/CartItemList.module.scss";
+
 import React from "react";
 import CartItem from "./CartItem";
 
 const CartItemList = ({ list }: any) => {
-  console.log("아이템 리스트", list);
   return (
-    <div>
+    <div className={styles.cartList}>
       {list.map((item: any) => {
         return <CartItem key={item.id} info={item} />;
       })}

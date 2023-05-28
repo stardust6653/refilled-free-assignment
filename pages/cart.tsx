@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../src/components/Header";
 import CartItemList from "../src/components/CartItemList";
+import SellBtn from "../src/components/SellBtn";
 
 const Cart = () => {
   const [storageData, setStorageData] = useState(null);
@@ -19,6 +20,7 @@ const Cart = () => {
       ) : (
         <p>장바구니가 비었어요</p>
       )}
+      <SellBtn list={storageData} />
     </>
   );
 };

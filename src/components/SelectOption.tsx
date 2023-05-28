@@ -2,11 +2,15 @@ import styles from "../../styles/SelectOption.module.scss";
 import { RiArrowDownSLine } from "react-icons/ri";
 
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../app/store";
 import Alert from "./alert";
 
+import { off } from "../features/modal/modalSlice";
+
 const SelectOption = () => {
+  const dispatch = useDispatch();
+
   const [option, setOption] = useState("옵션 선택");
   const [popUp, setPopUp] = useState(false);
 
@@ -91,6 +95,11 @@ const SelectOption = () => {
         onClick={() => {
           if (option !== "옵션 선택") {
             addCart();
+
+            dispatch(off());
+
+            document.body.style.overflow = "scroll";
+            sessionStorage.clear();
           } else {
             setPopUp(true);
             setTimeout(() => setPopUp(false), 2000);

@@ -20,7 +20,7 @@ const Cart = () => {
       ) : (
         <p>장바구니가 비었어요</p>
       )}
-      <SellBtn list={storageData} />
+      {storageData ? <SellBtn list={storageData} /> : <SellBtn />}
     </>
   );
 };

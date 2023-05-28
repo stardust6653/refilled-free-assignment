@@ -1,17 +1,15 @@
 import styles from "../../styles/SellBtn.module.scss";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const SellBtn = ({ list }: any) => {
-  let total = 0;
-
   const totalPrice = () => {
+    let total = 0;
     if (list !== undefined) {
       list.map((item: any) => {
         total += item.price;
       });
     }
-
     return total.toLocaleString("es-Us");
   };
 

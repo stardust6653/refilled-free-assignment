@@ -1,0 +1,10 @@
+.component {
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .noCart {
+    position: absolute;
+    top: 50%;
+  }
+}

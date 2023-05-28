@@ -5,10 +5,11 @@ import Image from "next/image";
 
 import { VscChromeClose } from "react-icons/vsc";
 
-const CartItem = ({ info }: any) => {
+const CartItem = ({ info, remove }: any) => {
   const discountRate = Math.round(
     ((info.originPrice - info.price) / info.originPrice) * 100
   );
+
   return (
     <div className={styles.component}>
       <Image src={info.imageUrl} alt={info.name} width={60} height={60} />
@@ -41,7 +42,13 @@ const CartItem = ({ info }: any) => {
           </div>
         </div>
       </div>
-      <VscChromeClose />
+      <VscChromeClose
+        className={styles.closeBtn}
+        onClick={() => {
+          const id = info.id;
+          remove(id);
+        }}
+      />
     </div>
   );
 };

@@ -22,6 +22,36 @@ const CardList = ({ list }: any) => {
           />
         );
       })}
+      {list.map((item: any) => {
+        return (
+          <Card
+            key={item.id}
+            id={item.id}
+            imageUrl={item.imageUrl}
+            name={item.name}
+            originPrice={item.originPrice}
+            price={item.price}
+            tag={item.tag}
+            productOptions={item.productOptions}
+            desc={item.desc}
+          />
+        );
+      })}
+      {list.map((item: any) => {
+        return (
+          <Card
+            key={item.id}
+            id={item.id}
+            imageUrl={item.imageUrl}
+            name={item.name}
+            originPrice={item.originPrice}
+            price={item.price}
+            tag={item.tag}
+            productOptions={item.productOptions}
+            desc={item.desc}
+          />
+        );
+      })}
     </ul>
   );
 };

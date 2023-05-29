@@ -1,19 +1,25 @@
 import styles from "../styles/Cart.module.scss";
 
 import React, { useEffect, useState } from "react";
+
 import Header from "../src/components/Header";
 import CartItemList from "../src/components/CartItemList";
 import BuyBtn from "../src/components/BuyBtn";
 import DesktopPopUp from "../src/components/DesktopPopUp";
 
+import { DataProps } from "../src/types/types";
+
 const Cart = () => {
-  const [storageData, setStorageData] = useState<any>(null);
+  const [storageData, setStorageData] = useState<DataProps[] | null>(null);
+
   const [click, setClick] = useState<boolean>(false);
 
   useEffect(() => {
-    const data: any = localStorage.getItem("cart");
-    const local = JSON.parse(data);
-    setStorageData(local);
+    const data: string | null = localStorage.getItem("cart");
+    if (data !== null) {
+      const local: DataProps[] | [] = JSON.parse(data);
+      setStorageData(local);
+    }
   }, [click]);
 
   return (
@@ -32,7 +38,11 @@ const Cart = () => {
             </p>
           </div>
         )}
-        {storageData ? <BuyBtn list={storageData} /> : <BuyBtn />}
+        {storageData ? (
+          <BuyBtn list={storageData} />
+        ) : (
+          <BuyBtn list={undefined} />
+        )}
       </div>
     </>
   );

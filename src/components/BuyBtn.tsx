@@ -1,11 +1,12 @@
 import Link from "next/link";
 import styles from "../../styles/BuyBtn.module.scss";
+import { DataProps } from "../types/types";
 
-const BuyBtn = ({ list, setClick }: any) => {
-  const totalPrice = () => {
-    let total = 0;
+const BuyBtn = ({ list }: { list: DataProps[] | undefined }): JSX.Element => {
+  const totalPrice = (): string => {
+    let total: number = 0;
     if (list !== undefined) {
-      list.map((item: any) => {
+      list.map((item: DataProps) => {
         total += item.price;
       });
     }
@@ -13,7 +14,7 @@ const BuyBtn = ({ list, setClick }: any) => {
   };
 
   return (
-    <div className={styles.component} onClick={setClick}>
+    <div className={styles.component}>
       <div className={styles.buyBtn}>
         {list !== undefined && list.length !== 0 ? (
           `${list.length}개 | ${totalPrice()}원 구매하기`

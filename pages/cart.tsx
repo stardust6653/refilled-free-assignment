@@ -21,7 +21,13 @@ const Cart = () => {
       {storageData && storageData.length !== 0 ? (
         <CartItemList list={storageData} setClick={setClick} />
       ) : (
-        <p className={styles.noCart}>장바구니가 비었어요</p>
+        <div className={styles.noCart}>
+          <p className={styles.logo}>Refilled</p>
+          <p className={styles.content}>
+            장바구니에 담긴 제품이 없습니다. <br />
+            제품을 추가해 보세요.
+          </p>
+        </div>
       )}
       {storageData ? <BuyBtn list={storageData} /> : <BuyBtn />}
     </div>

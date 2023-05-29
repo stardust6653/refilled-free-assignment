@@ -2,9 +2,28 @@ import styles from "../../styles/Header.module.scss";
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
 
 const Header = () => {
+  const [cartAmount, setCartAmount] = useState(null);
+  const updateData = useSelector((state: RootState) => state.updateData.value);
+
+  useEffect(() => {
+    const item: any = localStorage.getItem("cart");
+
+    if (item !== null) {
+      const data = JSON.parse(item);
+      if (data.length !== 0) {
+        setCartAmount(data.length);
+      }
+      if (data.length === 0) {
+        setCartAmount(null);
+      }
+    }
+  }, [updateData]);
+
   return (
     <>
       <div className={styles.component}>
@@ -37,6 +56,7 @@ const Header = () => {
                 width={22}
                 height={21}
               />
+              {cartAmount && <span className={styles.badge}>{cartAmount}</span>}
             </div>
           </Link>
         </header>

@@ -1,3 +1,4 @@
+import "react-toastify/dist/ReactToastify.css";
 import styles from "../styles/Shop.module.scss";
 
 import React from "react";
@@ -8,6 +9,7 @@ import CardList from "../src/components/CardList";
 import { useSelector } from "react-redux";
 import { RootState } from "../src/app/store";
 import Select from "../src/components/Select";
+import { ToastContainer } from "react-toastify";
 
 export interface DataProps {
   id?: number;
@@ -46,6 +48,12 @@ const Shop = ({ data }: any) => {
         </div>
       </div>
       {modal && <Select />}
+      <ToastContainer
+        position="bottom-center"
+        limit={2}
+        autoClose={1000}
+        hideProgressBar={true}
+      />
     </div>
   );
 };

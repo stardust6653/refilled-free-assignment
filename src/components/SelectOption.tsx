@@ -8,6 +8,7 @@ import Alert from "./Alert";
 
 import { off } from "../features/modal/modalSlice";
 import { update } from "../features/updateData/updateDataSlice";
+import { toast } from "react-toastify";
 
 interface dataProps {
   id: number;
@@ -112,15 +113,14 @@ const SelectOption = () => {
             dispatch(update());
             document.body.style.overflow = "scroll";
             sessionStorage.clear();
+            toast("장바구니에 물건이 담겼어요!");
           } else {
-            setPopUp(true);
-            setTimeout(() => setPopUp(false), 2000);
+            toast("옵션을 선택해주세요!");
           }
         }}
       >
         장바구니 담기
       </button>
-      {popUp && <Alert />}
     </div>
   );
 };

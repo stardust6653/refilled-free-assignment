@@ -3,7 +3,7 @@ import styles from "../styles/Cart.module.scss";
 import React, { useEffect, useState } from "react";
 import Header from "../src/components/Header";
 import CartItemList from "../src/components/CartItemList";
-import SellBtn from "../src/components/SellBtn";
+import BuyBtn from "../src/components/BuyBtn";
 
 const Cart = () => {
   const [storageData, setStorageData] = useState<any>(null);
@@ -23,7 +23,7 @@ const Cart = () => {
       ) : (
         <p className={styles.noCart}>장바구니가 비었어요</p>
       )}
-      {storageData ? <SellBtn list={storageData} /> : <SellBtn />}
+      {storageData ? <BuyBtn list={storageData} /> : <BuyBtn />}
     </div>
   );
 };

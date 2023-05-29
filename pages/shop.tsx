@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../src/app/store";
 import Select from "../src/components/Select";
 import { ToastContainer } from "react-toastify";
+import DesktopPopUp from "../src/components/DesktopPopUp";
 
 export interface DataProps {
   id?: number;
@@ -37,6 +38,7 @@ const Shop = ({ data }: any) => {
 
   return (
     <div className={styles.layout}>
+      <DesktopPopUp />
       <div className={styles.component}>
         <Header />
         <div className={styles.copy}>
@@ -46,14 +48,15 @@ const Shop = ({ data }: any) => {
         <div className={styles.cardList}>
           <CardList list={data} />
         </div>
+        <div>{modal && <Select />}</div>
+        <ToastContainer
+          className={styles.toast}
+          position="bottom-center"
+          limit={2}
+          autoClose={1000}
+          hideProgressBar={true}
+        />
       </div>
-      {modal && <Select />}
-      <ToastContainer
-        position="bottom-center"
-        limit={2}
-        autoClose={1000}
-        hideProgressBar={true}
-      />
     </div>
   );
 };

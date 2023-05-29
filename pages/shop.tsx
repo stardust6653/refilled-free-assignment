@@ -28,14 +28,16 @@ const Shop = ({ data }: { data: CardItemProps[] }) => {
         <div className={styles.cardList}>
           <CardList list={data} />
         </div>
-        <div>{modal && <Select />}</div>
-        <ToastContainer
-          className={styles.toast}
-          position="bottom-center"
-          limit={2}
-          autoClose={1000}
-          hideProgressBar={true}
-        />
+        {modal && <Select />}
+        <div className={styles.toastLayout}>
+          <ToastContainer
+            className={styles.toast}
+            position="bottom-center"
+            limit={2}
+            autoClose={1000}
+            hideProgressBar={true}
+          />
+        </div>
       </div>
     </div>
   );

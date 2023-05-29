@@ -3,9 +3,9 @@
   justify-content: center;
 
   .component {
-    position: relative;
     width: 375px;
-    height: 100vh;
+    height: 100%;
+    position: relative;
 
     .copy {
       width: 229px;
@@ -25,8 +25,17 @@
       justify-content: center;
     }
 
-    .toast {
-      position: absolute;
+    .toastLayout {
+      position: fixed;
+      width: 375px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      bottom: 0;
+      height: 1px;
+      .toast {
+        position: absolute;
+      }
     }
   }
 }

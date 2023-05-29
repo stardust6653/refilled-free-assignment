@@ -14,7 +14,6 @@ const Modal = () => {
         dispatch(off());
 
         document.body.style.overflow = "scroll";
-        sessionStorage.clear();
       }}
     ></div>
   );

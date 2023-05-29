@@ -4,11 +4,10 @@ import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../app/store";
-import Alert from "./Alert";
 
 import { off } from "../features/modal/modalSlice";
 import { update } from "../features/updateData/updateDataSlice";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 interface DataProps {
   id: number;
@@ -118,11 +117,9 @@ const SelectOption = () => {
         onClick={() => {
           if (option !== "옵션 선택") {
             addCart();
-
             dispatch(off());
             dispatch(update());
             document.body.style.overflow = "scroll";
-            sessionStorage.clear();
             toast("장바구니에 물건이 담겼어요!");
           } else {
             toast("옵션을 선택해주세요!");

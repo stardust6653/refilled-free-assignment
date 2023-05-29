@@ -39,14 +39,16 @@ const Header = () => {
             </nav>
           </Link>
           {/* <h1 className="hiddin">Refilled</h1> */}
-          <div className={styles.logo}>
-            <Image
-              src="/../public/assets/logo.png"
-              alt="Refilled"
-              width={100}
-              height={24}
-            />
-          </div>
+          <Link href={"/"}>
+            <div className={styles.logo}>
+              <Image
+                src="/../public/assets/logo.png"
+                alt="Refilled"
+                width={100}
+                height={24}
+              />
+            </div>
+          </Link>
 
           <Link href="/cart">
             <div className={styles.cart}>

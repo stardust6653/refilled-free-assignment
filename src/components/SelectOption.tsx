@@ -7,32 +7,22 @@ import { RootState } from "../app/store";
 
 import { off } from "../features/modal/modalSlice";
 import { update } from "../features/updateData/updateDataSlice";
-import { ToastContainer, toast } from "react-toastify";
-
-interface DataProps {
-  id: number;
-  imageUrl: string;
-  name: string;
-  originPrice: number;
-  price: number;
-  tag: { color: string; text: string };
-  productOptions: string;
-  desc: string;
-}
+import { toast } from "react-toastify";
+import { DataProps } from "../types/types";
 
 const SelectOption = () => {
   const dispatch = useDispatch();
 
-  const [option, setOption] = useState("옵션 선택");
-  const [popUp, setPopUp] = useState(false);
+  const [option, setOption] = useState<string>("옵션 선택");
+  const [popUp, setPopUp] = useState<boolean>(false);
 
   const optionData = useSelector(
     (state: RootState) => state.optionData.value
   ).payload;
 
-  const localData = localStorage.getItem("cart");
+  const localData: string | null = localStorage.getItem("cart");
 
-  const optionResult = () => {
+  const optionResult = (): string => {
     if (option === "옵션 없음") {
       return "옵션 없음";
     } else {

@@ -9,8 +9,6 @@ const Cart = () => {
   const [storageData, setStorageData] = useState<any>(null);
   const [click, setClick] = useState<boolean>(false);
 
-  console.log(click);
-
   useEffect(() => {
     const data: any = localStorage.getItem("cart");
     const local = JSON.parse(data);

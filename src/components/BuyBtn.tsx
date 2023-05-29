@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../../styles/BuyBtn.module.scss";
 
 const BuyBtn = ({ list, setClick }: any) => {
@@ -14,7 +15,13 @@ const BuyBtn = ({ list, setClick }: any) => {
   return (
     <div className={styles.component} onClick={setClick}>
       <div className={styles.buyBtn}>
-        {list !== undefined ? list.length : 0}개 | {totalPrice()}원 구매하기
+        {list !== undefined && list.length !== 0 ? (
+          `${list.length}개 | ${totalPrice()}원 구매하기`
+        ) : (
+          <Link href={"/shop"} className={styles.noItem}>
+            제품 추가하기
+          </Link>
+        )}
       </div>
     </div>
   );

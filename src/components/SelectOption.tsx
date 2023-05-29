@@ -1,5 +1,5 @@
 import styles from "../../styles/SelectOption.module.scss";
-import { RiArrowDownSLine } from "react-icons/ri";
+import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,7 +10,7 @@ import { off } from "../features/modal/modalSlice";
 import { update } from "../features/updateData/updateDataSlice";
 import { toast } from "react-toastify";
 
-interface dataProps {
+interface DataProps {
   id: number;
   imageUrl: string;
   name: string;
@@ -41,7 +41,7 @@ const SelectOption = () => {
     }
   };
 
-  const data: dataProps = {
+  const data: DataProps = {
     id: optionData.id,
     imageUrl: optionData.imageUrl,
     name: optionData.name,
@@ -70,25 +70,35 @@ const SelectOption = () => {
       <h3>{optionData.name}</h3>
       {optionData.productOptions.length > 0 ? (
         <div className={styles.optionBox}>
-          <button className={styles.optionResult}>
+          <button
+            className={styles.optionResult}
+            onClick={() => {
+              setPopUp((prev) => !prev);
+            }}
+          >
             {option}
-            <RiArrowDownSLine />
+            {popUp ? <RiArrowDownSLine /> : <RiArrowUpSLine />}
           </button>
-          <div className={styles.selectBox}>
-            {optionData.productOptions.map((item: any) => {
-              return (
-                <button
-                  className={styles.option}
-                  key={item.id}
-                  onClick={() => {
-                    setOption(item.name);
-                  }}
-                >
-                  {item["name"]}
-                </button>
-              );
-            })}
-          </div>
+          {popUp ? (
+            <div className={styles.selectBox}>
+              {optionData.productOptions.map((item: any) => {
+                return (
+                  <button
+                    className={styles.option}
+                    key={item.id}
+                    onClick={() => {
+                      setOption(item.name);
+                      setPopUp(false);
+                    }}
+                  >
+                    {item["name"]}
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <div className={styles.empty}></div>
+          )}
         </div>
       ) : (
         <div className={styles.optionBox}>

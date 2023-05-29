@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { DataProps } from "../../../pages/shop";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { CardItemProps } from "../../types/types";
 
 interface OptionDataState {
   value: any;
@@ -13,7 +13,7 @@ const optionDataSlice = createSlice({
   name: "optionData",
   initialState,
   reducers: {
-    add: (state, payload) => {
+    add: (state, payload: PayloadAction<CardItemProps>) => {
       state.value = payload;
     },
     clear: (state) => {

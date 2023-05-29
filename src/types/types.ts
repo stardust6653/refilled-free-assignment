@@ -5,6 +5,10 @@ export interface DataProps {
   originPrice: number;
   price: number;
   tag: { color: string; text: string };
-  productOptions: string;
+  productOption?: string;
   desc: string;
+}
+
+export interface CardItemProps extends DataProps {
+  productOptions: { id: number; name: string; price: number; stock: number }[];
 }

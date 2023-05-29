@@ -4,8 +4,15 @@ import React from "react";
 import Image from "next/image";
 
 import { VscChromeClose } from "react-icons/vsc";
+import { DataProps } from "../types/types";
 
-const CartItem = ({ info, remove }: any) => {
+const CartItem = ({
+  info,
+  removeItem,
+}: {
+  info: DataProps;
+  removeItem: (id: number) => void;
+}) => {
   const discountRate = Math.round(
     ((info.originPrice - info.price) / info.originPrice) * 100
   );
@@ -46,7 +53,7 @@ const CartItem = ({ info, remove }: any) => {
         className={styles.closeBtn}
         onClick={() => {
           const id = info.id;
-          remove(id);
+          removeItem(id);
         }}
       />
     </div>

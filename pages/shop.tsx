@@ -11,29 +11,9 @@ import { RootState } from "../src/app/store";
 import Select from "../src/components/Select";
 import { ToastContainer } from "react-toastify";
 import DesktopPopUp from "../src/components/DesktopPopUp";
+import { CardItemProps } from "../src/types/types";
 
-export interface DataProps {
-  id?: number;
-  name: string;
-  originPrice: number;
-  price: number;
-  tag: {
-    color: string;
-    text: string;
-  };
-  desc?: string;
-  imageUrl: string;
-  productOptions: {
-    id: number;
-    name: string;
-    price: number;
-    stock: number;
-  }[];
-  text?: string;
-  color?: string;
-}
-
-const Shop = ({ data }: any) => {
+const Shop = ({ data }: { data: CardItemProps[] }) => {
   const modal = useSelector((state: RootState) => state.modal.value);
 
   return (

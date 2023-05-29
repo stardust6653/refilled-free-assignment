@@ -1,13 +1,13 @@
 import styles from "../../styles/CardList.module.scss";
 
 import React from "react";
-import { DataProps } from "../../pages/shop";
 import Card from "./Card";
+import { CardItemProps, DataProps } from "../types/types";
 
-const CardList = ({ list }: any) => {
+const CardList = ({ list }: { list: CardItemProps[] }) => {
   return (
     <ul className={styles.cardList}>
-      {list.map((item: any) => {
+      {list.map((item: CardItemProps) => {
         return (
           <Card
             key={item.id}
@@ -22,7 +22,7 @@ const CardList = ({ list }: any) => {
           />
         );
       })}
-      {list.map((item: any) => {
+      {list.map((item: CardItemProps) => {
         return (
           <Card
             key={item.id}
@@ -37,7 +37,7 @@ const CardList = ({ list }: any) => {
           />
         );
       })}
-      {list.map((item: any) => {
+      {list.map((item: CardItemProps) => {
         return (
           <Card
             key={item.id}

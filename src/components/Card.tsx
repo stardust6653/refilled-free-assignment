@@ -1,11 +1,12 @@
 import styles from "../../styles/Card.module.scss";
 
 import Image from "next/image";
-import React, { useState } from "react";
-import { DataProps } from "../../pages/shop";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+
+import { useDispatch } from "react-redux";
 import { on } from "../features/modal/modalSlice";
 import { add } from "../features/optionData/optionDataSlice";
+import { CardItemProps } from "../types/types";
 
 const Card = ({
   id,
@@ -16,14 +17,16 @@ const Card = ({
   tag,
   desc,
   productOptions,
-}: DataProps) => {
-  const discountRate = Math.round(((originPrice - price) / originPrice) * 100);
+}: CardItemProps) => {
+  const discountRate: number = Math.round(
+    ((originPrice - price) / originPrice) * 100
+  );
 
   const dispatch = useDispatch();
 
-  const color = tag.color;
+  const color: string = tag.color;
 
-  const itemInfo = {
+  const itemInfo: CardItemProps = {
     id,
     imageUrl,
     name,

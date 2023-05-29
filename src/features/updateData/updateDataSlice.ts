@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { DataProps } from "../../../pages/shop";
 
 interface updateDataState {
   value: boolean;

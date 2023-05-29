@@ -7,11 +7,11 @@ import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 
 const Header = () => {
-  const [cartAmount, setCartAmount] = useState(null);
+  const [cartAmount, setCartAmount] = useState<number | null>(null);
   const updateData = useSelector((state: RootState) => state.updateData.value);
 
   useEffect(() => {
-    const item: any = localStorage.getItem("cart");
+    const item: string | null = localStorage.getItem("cart");
 
     if (item !== null) {
       const data = JSON.parse(item);

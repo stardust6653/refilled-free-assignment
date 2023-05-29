@@ -8,7 +8,7 @@ import { RootState } from "../app/store";
 import { off } from "../features/modal/modalSlice";
 import { update } from "../features/updateData/updateDataSlice";
 import { toast } from "react-toastify";
-import { DataProps } from "../types/types";
+import { CardItemProps, DataProps } from "../types/types";
 
 const SelectOption = () => {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const SelectOption = () => {
     originPrice: optionData.originPrice,
     price: optionData.price,
     tag: optionData.tag,
-    productOptions: optionResult(),
+    productOption: optionResult(),
     desc: optionData.desc,
   };
 
@@ -70,7 +70,7 @@ const SelectOption = () => {
           </button>
           {popUp ? (
             <div className={styles.selectBox}>
-              {optionData.productOptions.map((item: any) => {
+              {optionData.productOptions.map((item: CardItemProps) => {
                 return (
                   <button
                     className={styles.option}

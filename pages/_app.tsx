@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Provider store={store}>
         <div className={styles.layout}>
-          <StatusBar />
           <Component {...pageProps} />
         </div>
       </Provider>

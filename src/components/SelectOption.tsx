@@ -4,9 +4,21 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../app/store";
-import Alert from "./alert";
+import Alert from "./Alert";
 
 import { off } from "../features/modal/modalSlice";
+import { update } from "../features/updateData/updateDataSlice";
+
+interface dataProps {
+  id: number;
+  imageUrl: string;
+  name: string;
+  originPrice: number;
+  price: number;
+  tag: { color: string; text: string };
+  productOptions: string;
+  desc: string;
+}
 
 const SelectOption = () => {
   const dispatch = useDispatch();
@@ -28,7 +40,7 @@ const SelectOption = () => {
     }
   };
 
-  const data: any = {
+  const data: dataProps = {
     id: optionData.id,
     imageUrl: optionData.imageUrl,
     name: optionData.name,
@@ -97,7 +109,7 @@ const SelectOption = () => {
             addCart();
 
             dispatch(off());
-
+            dispatch(update());
             document.body.style.overflow = "scroll";
             sessionStorage.clear();
           } else {

@@ -1,9 +1,9 @@
 .layout {
   display: flex;
   justify-content: center;
-  height: 100%;
 
   .component {
+    position: relative;
     width: 375px;
     height: 100vh;
 
@@ -23,6 +23,10 @@
       width: 375px;
       display: flex;
       justify-content: center;
+    }
+
+    .toast {
+      position: absolute;
     }
   }
 }

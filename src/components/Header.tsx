@@ -38,7 +38,7 @@ const Header = () => {
               />
             </nav>
           </Link>
-          {/* <h1 className="hiddin">Refilled</h1> */}
+
           <Link href={"/"}>
             <div className={styles.logo}>
               <Image

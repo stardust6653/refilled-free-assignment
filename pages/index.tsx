@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           <Link href={"/shop"} className={styles.link}>
             👉 샵으로 가기
           </Link>
-          <Link href={"/shop"} className={styles.link}>
+          <Link href={"/cart"} className={styles.link}>
             👉 장바구니로 가기
           </Link>
           <p className={styles.subInfo}>

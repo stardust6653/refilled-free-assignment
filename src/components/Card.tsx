@@ -26,7 +26,12 @@ const Card = ({ cardInfo }: { cardInfo: CardItemProps }) => {
         document.body.style.overflow = "hidden";
       }}
     >
-      <Image src={cardInfo.imageUrl} alt="" width={168} height={168} />
+      <Image
+        src={cardInfo.imageUrl}
+        alt={`${cardInfo.name} 제품의 사진입니다.`}
+        width={168}
+        height={168}
+      />
       {cardInfo.tag && (
         <span
           className={`${styles.badge} ${color === "blue" && styles.blue} ${

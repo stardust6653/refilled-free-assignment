@@ -1,3 +1,34 @@
 .layout {
   background-color: #fff;
+  .component {
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+
+    .intro {
+      text-align: center;
+      font-weight: 600;
+      color: $secondary-color;
+      line-height: 150%;
+      margin-bottom: 16px;
+    }
+    .link {
+      text-decoration: none;
+      color: $secondary-color;
+      font-weight: 500;
+      margin-bottom: 10px;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    .subInfo {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 400;
+      color: $secondary-color;
+    }
+  }
 }

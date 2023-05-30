@@ -1,15 +1,15 @@
 .component {
   width: 375px;
   header {
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    border-bottom: 1px solid $primary-color;
+    border-top: 1px solid $primary-color;
     height: 60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     nav {
       padding: 10px;
-      border-right: 1px solid black;
+      border-right: 1px solid $primary-color;
     }
     .logo {
       display: flex;
@@ -19,7 +19,7 @@
     .cart {
       position: relative;
       padding: 20px;
-      border-left: 1px solid black;
+      border-left: 1px solid $primary-color;
 
       .badge {
         position: absolute;

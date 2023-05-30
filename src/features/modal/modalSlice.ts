@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+// 모달 on/off를 위한 상태 관리
+// on/off 리듀서를 활용 모달창 끄고 키기
 interface ModalState {
   value: boolean;
 }

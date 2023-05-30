@@ -2,7 +2,7 @@ import styles from "../../styles/CardList.module.scss";
 
 import React from "react";
 import Card from "./Card";
-import { CardItemProps, DataProps } from "../types/types";
+import { CardItemProps } from "../types/types";
 
 const CardList = ({ list }: { list: CardItemProps[] }) => {
   return (

@@ -91,8 +91,8 @@ yarn build && yarn start
 
 ## 동작 예시
 
-<img src="public/241896817-18563962-072f-4f01-ba44-86f7011eecb4.gif"/>
+<img src="public/example.gif" alt="구현 예제"/>
 
 ## 캡쳐
 
-<img src="public/capture.png">
+<img src="public/capture.png" alt="구현 기능 캡쳐 이미지">

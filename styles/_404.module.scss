@@ -1,0 +1,30 @@
+.layout {
+  background-color: #fff;
+  ._404 {
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 14px;
+    color: #aaa;
+    .logo {
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .link {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: #666;
+    }
+  }
+}

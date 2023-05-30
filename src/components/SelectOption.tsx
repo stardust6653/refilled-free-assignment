@@ -131,10 +131,15 @@ const SelectOption = () => {
     );
   } else {
     return (
-      <p>
-        Oops! 데이터가 검색되지 않아요. <br />
-        조금 뒤에 다시 한 번 시도 해주세요!
-      </p>
+      <div className={styles.selectOptionComponent}>
+        <div className={styles.noDataComponent}>
+          <p className={styles.noDataComment}>
+            Oops! 데이터가 검색되지 않아요. <br />
+            조금 뒤에 다시 한 번 시도 해주세요!
+          </p>
+          <p className={styles.emoji}>🥲</p>
+        </div>
+      </div>
     );
   }
 };

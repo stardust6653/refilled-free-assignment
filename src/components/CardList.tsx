@@ -8,49 +8,18 @@ const CardList = ({ list }: { list: CardItemProps[] }) => {
   return (
     <ul className={styles.cardList}>
       {list.map((item: CardItemProps) => {
-        return (
-          <Card
-            key={item.id}
-            id={item.id}
-            imageUrl={item.imageUrl}
-            name={item.name}
-            originPrice={item.originPrice}
-            price={item.price}
-            tag={item.tag}
-            productOptions={item.productOptions}
-            desc={item.desc}
-          />
-        );
-      })}
-      {list.map((item: CardItemProps) => {
-        return (
-          <Card
-            key={item.id}
-            id={item.id}
-            imageUrl={item.imageUrl}
-            name={item.name}
-            originPrice={item.originPrice}
-            price={item.price}
-            tag={item.tag}
-            productOptions={item.productOptions}
-            desc={item.desc}
-          />
-        );
-      })}
-      {list.map((item: CardItemProps) => {
-        return (
-          <Card
-            key={item.id}
-            id={item.id}
-            imageUrl={item.imageUrl}
-            name={item.name}
-            originPrice={item.originPrice}
-            price={item.price}
-            tag={item.tag}
-            productOptions={item.productOptions}
-            desc={item.desc}
-          />
-        );
+        const cardInfo: CardItemProps = {
+          id: item.id,
+          imageUrl: item.imageUrl,
+          name: item.name,
+          originPrice: item.originPrice,
+          price: item.price,
+          tag: item.tag,
+          productOptions: item.productOptions,
+          desc: item.desc,
+        };
+
+        return <Card key={cardInfo.id} cardInfo={cardInfo} />;
       })}
     </ul>
   );

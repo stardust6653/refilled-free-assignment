@@ -37,11 +37,11 @@ yarn build && yarn start
 
 2. redux-toolkit
 
-클라이언트 상에서의 데이터를 전역관리하기 위해 redux-toolkit을 활용했습니다.
+- 클라이언트 상에서의 데이터를 전역관리하기 위해 redux-toolkit을 활용했습니다.
 
-- 모달 on/off를 위한 state 관리
-- 제품 카드 클릭 시 해당 상품 데이터 저장을 위한 state 관리
-- 장바구니 수량 업데이트를 위한 state 관리
+  - 모달 on/off를 위한 state 관리
+  - 제품 카드 클릭 시 해당 상품 데이터 저장을 위한 state 관리
+  - 장바구니 수량 업데이트를 위한 state 관리
 
 ---
 

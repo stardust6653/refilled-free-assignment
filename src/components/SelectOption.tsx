@@ -20,8 +20,6 @@ const SelectOption = () => {
     (state: RootState) => state.optionData.value?.payload
   );
 
-  console.log(optionData);
-
   const localData: string | null = localStorage.getItem("cart");
 
   const optionResult = (): string => {

@@ -13,7 +13,7 @@ const CartItem = ({
   info: DataProps;
   removeItem: (id: number) => void;
 }) => {
-  const discountRate = Math.round(
+  const discountRate: number = Math.round(
     ((info.originPrice - info.price) / info.originPrice) * 100
   );
 

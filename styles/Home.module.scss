@@ -20,6 +20,9 @@
       color: $secondary-color;
       font-weight: 500;
       margin-bottom: 10px;
+      &:visited {
+        color: #aaa;
+      }
       &:hover {
         color: $primary-color;
       }

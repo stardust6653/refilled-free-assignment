@@ -24,6 +24,9 @@
       text-decoration: none;
       font-size: 16px;
       font-weight: 500;
+      &:visited {
+        color: #aaa;
+      }
       &:hover {
         color: $primary-color;
       }

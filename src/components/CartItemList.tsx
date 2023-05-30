@@ -13,7 +13,7 @@ const CartItemList = ({
   list: DataProps[];
   setClick: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const [items, setItems] = useState(list);
+  const [items, setItems] = useState<DataProps[]>(list);
   const dispatch = useDispatch();
 
   const removeItem = (id: number): void => {

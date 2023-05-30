@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { CardItemProps } from "../../types/types";
 
 interface OptionDataState {
-  value: any;
+  value: null | { payload: CardItemProps };
 }
 
 const initialState: OptionDataState = {
@@ -16,12 +16,9 @@ const optionDataSlice = createSlice({
     add: (state, payload: PayloadAction<CardItemProps>) => {
       state.value = payload;
     },
-    clear: (state) => {
-      state.value = null;
-    },
   },
 });
 
-export const { add, clear } = optionDataSlice.actions;
+export const { add } = optionDataSlice.actions;
 
 export default optionDataSlice.reducer;

@@ -4,12 +4,10 @@
 
   .component {
     width: 375px;
-    height: 100%;
     position: relative;
 
     .copy {
       width: 229px;
-      height: 60px;
       margin: 28px 18px;
       line-height: 30px;
       color: $primary-color;
@@ -20,7 +18,6 @@
       }
     }
     .cardList {
-      width: 375px;
       display: flex;
       justify-content: center;
     }
@@ -28,11 +25,7 @@
     .toastLayout {
       position: fixed;
       width: 375px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       bottom: 0;
-      height: 1px;
       .toast {
         position: absolute;
       }

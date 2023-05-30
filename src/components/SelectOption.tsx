@@ -54,6 +54,25 @@ const SelectOption = () => {
     }
   };
 
+  const clickCart = () => {
+    if (option !== "옵션 선택") {
+      if (localData) {
+        const existId = JSON.parse(localData).map((item: DataProps) => item.id);
+        if (existId.includes(optionData.id)) {
+          toast("장바구니에 이미 담겨있어요!");
+        } else {
+          addCart();
+          dispatch(off());
+          dispatch(update());
+          document.body.style.overflow = "scroll";
+          toast("장바구니에 물건이 담겼어요!");
+        }
+      }
+    } else {
+      toast("옵션을 선택해주세요!");
+    }
+  };
+
   return (
     <div className={styles.selectOptionComponent}>
       <h3>{optionData.name}</h3>
@@ -102,29 +121,7 @@ const SelectOption = () => {
           <div className={styles.empty}></div>
         </div>
       )}
-      <button
-        className={styles.cartBtn}
-        onClick={() => {
-          if (option !== "옵션 선택") {
-            if (localData) {
-              const existId = JSON.parse(localData).map(
-                (item: DataProps) => item.id
-              );
-              if (existId.includes(optionData.id)) {
-                toast("장바구니에 이미 담겨있어요!");
-              } else {
-                addCart();
-                dispatch(off());
-                dispatch(update());
-                document.body.style.overflow = "scroll";
-                toast("장바구니에 물건이 담겼어요!");
-              }
-            }
-          } else {
-            toast("옵션을 선택해주세요!");
-          }
-        }}
-      >
+      <button className={styles.cartBtn} onClick={clickCart}>
         장바구니 담기
       </button>
     </div>

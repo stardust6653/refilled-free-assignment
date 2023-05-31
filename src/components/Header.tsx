@@ -6,6 +6,10 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 
+import logo from "../../public/assets/logo.png";
+import cart from "../../public/assets/cart.png";
+import menu from "../../public/assets/menu.png";
+
 const Header = () => {
   const [cartAmount, setCartAmount] = useState<number | null>(null);
   const updateData = useSelector((state: RootState) => state.updateData.value);
@@ -30,34 +34,19 @@ const Header = () => {
         <header>
           <Link href="/shop">
             <nav>
-              <Image
-                src="/../public/assets/menu.png"
-                alt="메뉴로 가기"
-                width={40}
-                height={40}
-              />
+              <Image src={menu} alt="메뉴로 가기" width={40} height={40} />
             </nav>
           </Link>
 
           <Link href={"/"}>
             <div className={styles.logo}>
-              <Image
-                src="/../public/assets/logo.png"
-                alt="Refilled"
-                width={100}
-                height={24}
-              />
+              <Image src={logo} alt="Refilled" width={100} height={24} />
             </div>
           </Link>
 
           <Link href="/cart">
             <div className={styles.cart}>
-              <Image
-                src="/../public/assets/cart.png"
-                alt="장바구니로 가기"
-                width={22}
-                height={21}
-              />
+              <Image src={cart} alt="장바구니로 가기" width={22} height={21} />
               {cartAmount && <span className={styles.badge}>{cartAmount}</span>}
             </div>
           </Link>

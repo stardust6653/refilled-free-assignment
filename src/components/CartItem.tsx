@@ -34,7 +34,7 @@ const CartItem = ({
             )}
 
             <div className={styles.name}>{info.name}</div>
-            <div className={styles.desc}>{info.desc}</div>
+            <div className={styles.productOption}>{info.productOption}</div>
           </div>
         </div>
         <div className={styles.priceGroup}>

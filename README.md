@@ -115,11 +115,11 @@ yarn build && yarn start
 
 ## 동작 예시
 
-<img src="public/example.gif" alt="구현 예제"/>
+![구현 동영상](public/example.gif)
 
 ## 캡쳐
 
-<img src="public/capture.png" alt="구현 기능 캡쳐 이미지">
+![구현 기능 캡쳐 이미지](public/capture.png)
 
 ---
 

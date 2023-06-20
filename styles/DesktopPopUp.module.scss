@@ -1,0 +1,20 @@
+@import "../styles//_mixins";
+
+@include mobile {
+  .layout {
+    display: none;
+  }
+}
+
+@include desktop {
+  .layout {
+    width: 270px;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    img {
+      position: fixed;
+    }
+  }
+}

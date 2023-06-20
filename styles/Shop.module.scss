@@ -1,0 +1,35 @@
+.layout {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+
+  .component {
+    width: 375px;
+    position: relative;
+
+    .copy {
+      width: 229px;
+      margin: 28px 18px;
+      line-height: 30px;
+      color: $primary-color;
+      font-size: 18px;
+      font-weight: 600;
+      span {
+        color: $secondary-color;
+      }
+    }
+    .cardList {
+      display: flex;
+      justify-content: center;
+    }
+
+    .toastLayout {
+      position: fixed;
+      width: 375px;
+      bottom: 0;
+      .toast {
+        position: absolute;
+      }
+    }
+  }
+}

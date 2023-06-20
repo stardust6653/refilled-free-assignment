@@ -1,0 +1,36 @@
+.component {
+  width: 375px;
+  header {
+    border-bottom: 1px solid $primary-color;
+    border-top: 1px solid $primary-color;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    nav {
+      padding: 10px;
+      border-right: 1px solid $primary-color;
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
+      width: 255px;
+    }
+    .cart {
+      position: relative;
+      padding: 20px;
+      border-left: 1px solid $primary-color;
+
+      .badge {
+        position: absolute;
+        top: 16px;
+        right: 11px;
+        background-color: $accent-color;
+        color: white;
+        font-size: 10px;
+        border-radius: 50%;
+        padding: 2px 4px;
+      }
+    }
+  }
+}

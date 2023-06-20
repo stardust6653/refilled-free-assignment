@@ -1,0 +1,110 @@
+%optionCard {
+  cursor: pointer;
+
+  width: 270px;
+  height: 45px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+%existOtpion {
+  border: 1px solid $primary-color;
+  background-color: white;
+}
+
+.selectOptionComponent {
+  position: absolute;
+
+  border: 1px solid $primary-color;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 350px;
+
+  background-color: white;
+
+  h3 {
+    width: 270px;
+    margin-bottom: 14px;
+    font-size: 18px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    margin-top: 33px;
+  }
+  .optionBox {
+    .optionResult {
+      @extend %optionCard;
+      @extend %existOtpion;
+      margin-bottom: 2px;
+    }
+
+    .selectBox {
+      margin-bottom: 22px;
+
+      .option {
+        @extend %optionCard;
+        @extend %existOtpion;
+        border-style: solid solid none solid;
+        box-sizing: border-box;
+        &:active {
+          background-color: #f2f2f2;
+        }
+      }
+      :last-child {
+        border-style: solid solid solid solid;
+      }
+    }
+
+    .noOptions {
+      cursor: pointer;
+      @extend %optionCard;
+      border: 1px solid #808080;
+      color: #808080;
+      background-color: #f2f2f2;
+      margin-bottom: 2px;
+    }
+
+    .empty {
+      height: 135px;
+      margin-bottom: 22px;
+    }
+  }
+
+  .cartBtn {
+    cursor: pointer;
+    background-color: $primary-color;
+    color: white;
+    width: 270px;
+    height: 60px;
+    font-size: 18px;
+  }
+  .noDataComponent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .noDataComment {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      line-height: 150%;
+      margin-bottom: 10px;
+    }
+    .emoji {
+      font-size: 90px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  .noCart {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    text-align: center;
+    color: #aaa;
+
+    top: 35%;
+    .logo {
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .content {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}

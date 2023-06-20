@@ -1,44 +1,31 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 
-import { decrement, increment } from "../src/features/counter/counterSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../src/app/store";
+import type { NextPage } from "next";
+import Header from "../src/components/Header";
+import DesktopPopUp from "../src/components/DesktopPopUp";
+import Link from "next/link";
 
 const Home: NextPage = () => {
-  const count = useSelector((state: RootState) => state.counter.value);
-
-  const dispatch = useDispatch();
-
   return (
     <>
-      <Head>
-        <link
-          rel="icon"
-          type="image/png"
-          href="https://s3.ap-northeast-2.amazonaws.com/refilled.co.kr/favicon/symbol_only.png"
-        ></link>
-        <title>리필드</title>
-      </Head>
-
-      <h1>Refilled Free Assignment</h1>
-      <p>{count}</p>
-      <button
-        onClick={() => {
-          dispatch(increment());
-        }}
-      >
-        증가
-      </button>
-      <button
-        onClick={() => {
-          dispatch(decrement());
-        }}
-      >
-        감소
-      </button>
+      <DesktopPopUp />
+      <div className={styles.layout}>
+        <Header />
+        <div className={styles.component}>
+          <p className={styles.intro}>
+            안녕하세요. <br /> FE지원자 박소예입니다!
+          </p>
+          <Link href={"/shop"} className={styles.link}>
+            👉 샵으로 가기
+          </Link>
+          <Link href={"/cart"} className={styles.link}>
+            👉 장바구니로 가기
+          </Link>
+          <p className={styles.subInfo}>
+            위 헤더의 아이콘을 통해서도 이동 가능합니다. :)
+          </p>
+        </div>
+      </div>
     </>
   );
 };
